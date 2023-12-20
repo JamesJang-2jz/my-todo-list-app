@@ -6,6 +6,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import lombok.Data;
 
+// model for the to do items into db
+// data annotation to generate common methods getters/setters
 @Data
 @Entity
 public class ToDo {
