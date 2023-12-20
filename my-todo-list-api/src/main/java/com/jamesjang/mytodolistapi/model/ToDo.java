@@ -16,6 +16,6 @@ public class ToDo {
 
     private String desc;
     private boolean completed;
-    
+
 
 }
