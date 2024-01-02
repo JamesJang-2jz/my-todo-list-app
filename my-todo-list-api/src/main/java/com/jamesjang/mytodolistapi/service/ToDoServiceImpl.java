@@ -1,6 +1,7 @@
 package com.jamesjang.mytodolistapi.service;
 
 
+import com.jamesjang.mytodolistapi.exception.ToDoNotFoundException;
 import com.jamesjang.mytodolistapi.model.ToDo;
 import com.jamesjang.mytodolistapi.repository.ToDoRepository;
 import lombok.RequiredArgsConstructor;
@@ -16,7 +17,8 @@ public class ToDoServiceImpl implements ToDoService{
 
     @Override
     public ToDo getToDo(long id) {
-        return null;
+        return toDoRepository.findById(id)
+                .orElseThrow(() -> new ToDoNotFoundException(String.format("To-do with id '%s' not found", id)));
     }
 
     @Override
