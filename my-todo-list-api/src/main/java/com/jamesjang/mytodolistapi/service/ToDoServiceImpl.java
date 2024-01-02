@@ -23,21 +23,25 @@ public class ToDoServiceImpl implements ToDoService{
 
     @Override
     public List<ToDo> getToDos() {
-        return null;
+        return toDoRepository.findAll();
     }
 
     @Override
     public ToDo addToDo(String desc) {
-        return null;
+        ToDo toDo = new ToDo();
+        toDo.setDesc(desc);
+        return toDoRepository.save(toDo);
     }
 
     @Override
     public void deleteToDo(long id) {
-
+        toDoRepository.deleteById(id);
     }
 
     @Override
     public void updateToDo(long id, boolean completed) {
-
+        ToDo toDo = getToDo(id);
+        toDo.setCompleted(completed);
+        toDoRepository.save(toDo);
     }
 }
