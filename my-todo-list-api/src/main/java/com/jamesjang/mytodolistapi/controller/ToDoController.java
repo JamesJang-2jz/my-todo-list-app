@@ -15,6 +15,12 @@ import java.util.List;
 @CrossOrigin("http://localhost:3000")
 public class ToDoController {
 
+
+    /* this doesn't instantitate the interface but Spring will provide bean and inject when needed.
+    ToDoServiceImpl implements the ToDoService interface. @Service in ToDoServiceImpl tells Spring that this class is service bean
+    @RequiredArgsConstructor generates constructor that takes ToDoService parameter and inject when creating instance of ToDoController
+    @RequiredArgsConstructor implicitly has @Autowired included
+    */
     private final ToDoService toDoService;
 
     @GetMapping
